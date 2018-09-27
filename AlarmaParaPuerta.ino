@@ -6,6 +6,8 @@
  * Alarma notificadora de entrada de individuos
  */
 
+#include "LowPower.h"
+
 //Declaración de constantes
 const int SENSOR = 2;//Red switch
 const int LED = 13;//Led del arduino
@@ -19,18 +21,23 @@ void setup() {
   pinMode(LED, OUTPUT);
   //Interrupción que se activa cuando el reed suich tiene un cambio de estado y lleva al método cambio:
   attachInterrupt(digitalPinToInterrupt(SENSOR),cambio,CHANGE);
- 
 }
 
 void loop() {
+
+  //Duerme el arduino siempre y cuando no se active la interrupción
+  LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
+
   digitalWrite(LED, estado);
-  if(estado==HIGH)
+  
+  if(estado == HIGH)
     tone(BOCINA,440);
   else
     noTone(BOCINA);
+    
 }
 
 //Método activado por la interrupción. Cambia el valor de la variable estado
 void cambio(){
-  estado = !estado;
-}
+    estado = !estado;
+  }
