@@ -1,14 +1,10 @@
-Instituto Tecnológico de León
-
-Ingeniería en Sistemas Computacionales
-
-Sistemas Programables
-
-Práctica #2
-
-Ana Luisa Campos Magallanes
-
 # Sistema notificador de entrada de individuos
+
+- Instituto Tecnológico de León <BR>
+- Ingeniería en Sistemas Computacionales <BR>
+- Sistemas Programables <BR>
+- Práctica #2 <BR>
+- Ana Luisa Campos Magallanes <BR>
 
 ## Descripción
 
@@ -17,15 +13,15 @@ El programa hace uso de interrupciones para optimizar el consumo de energía.
 
 ## Material
 
-El prototipo consta de los siguientes materiales:
+El prototipo consta de los siguientes materiales: <BR>
+- 1 Reed switch  <BR>
+- 1 Buzzer <BR>
+- 1 Resistencia 100ohms <BR>
+- 1 Arduino UNO
+  
+## Diagrama
+![](Diagrama.jpg)
 
-1 Reed switch
-
-1 Buzzer
-
-1 Resistencia 100ohms
-
-1 Arduino UNO
-
-
+## Foto
+![](Prototipo.jpg)
 
