@@ -9,6 +9,7 @@
 //Declaración de constantes
 const int SENSOR = 2;//Red switch
 const int LED = 13;//Led del arduino
+const int BOCINA = 3;//Buzzer
 
 //Declaración de variables
 volatile int estado = LOW;
@@ -23,9 +24,13 @@ void setup() {
 
 void loop() {
   digitalWrite(LED, estado);
+  if(estado==HIGH)
+    tone(BOCINA,440);
+  else
+    noTone(BOCINA);
 }
 
-//Cambia el estado si hubo un cambio en el reed switch
+//Método activado por la interrupción. Cambia el valor de la variable estado
 void cambio(){
   estado = !estado;
 }
